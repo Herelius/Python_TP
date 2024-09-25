@@ -15,7 +15,7 @@ def read_params() -> dict:
     # Parsing arguments
     args = parser.parse_args()
 
-    # Verify
+    # Verify inputs
     regex_protocol = r"http|https"
     if not re.match(regex_protocol, args.protocol):
         raise Exception(f"Error : Protocol must be http or https.")
@@ -32,3 +32,7 @@ def read_params() -> dict:
     }
 
     return result
+
+
+if __name__ == '__main__':
+    read_params()
