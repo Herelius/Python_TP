@@ -14,6 +14,8 @@ pip install -r requirements.txt
 
 **Windows :**
 
+Fichier [exec.bat](exec.bat) :
+
 ```shell
 set PYTHON_EXEC=python
 set PROTOCOL=http
@@ -23,6 +25,8 @@ set THRESHOLD=10
 ```
 
 **Linux :**
+
+Fichier [exec.sh](exec.sh) :
 
 ```shell
 PYTHON_EXEC=python
