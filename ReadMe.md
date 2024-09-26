@@ -10,7 +10,7 @@ pip install -r requirements.txt
 
 # Utilisation
 
-1. Modifier les variables `PYTHON_EXEC`, `PROTOCOL`, `HOSTNAME`, `URI` et `THRESHOLD` se trouvant au début du fichier [exec.sh](exec.sh) par l'exécuteur python local.
+1. Modifier les variables `PYTHON_EXEC`, `PROTOCOL`, `HOSTNAME`, `URI` et `THRESHOLD` se trouvant au début du fichier [exec.sh](exec.sh) (ou [exec.bat](exec.bat)) par l'exécuteur python local.
 
 **Windows :**
 
