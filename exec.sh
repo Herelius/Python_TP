@@ -1,13 +1,26 @@
+PYTHON_EXEC=python
+PROTOCOL=http
+HOSTNAME=google.com
+URI=/fr
+THRESHOLD=10
 
+echo Exec params:
+echo ===========================================================================================
+echo PROTOCOL = $PROTOCOL
+echo HOSTNAME = $HOSTNAME
+echo URI = $URI
+echo THRESHOLD = $THRESHOLD
+echo ===========================================================================================
+echo 
+echo 
+echo Execute main script:
+echo ===========================================================================================
+$PYTHON_EXEC main.py --protocol $PROTOCOL --hostname $HOSTNAME --uri $URI --threshold $THRESHOLD
+echo ===========================================================================================
 echo ""
-echo "Execute main script:"
-echo "========================================================================="
-python3 main.py --protocol http --hostname google.com --uri /fr --threshold 1
-echo "========================================================================="
 echo ""
-echo ""
-echo "Execute tests:"
-echo "========================================================================="
-python3 tests/test_format_url.py
-echo "========================================================================="
-echo "END"
+echo Execute tests:
+echo ===========================================================================================
+$PYTHON_EXEC tests/test_format_url.py
+echo ===========================================================================================
+echo END
