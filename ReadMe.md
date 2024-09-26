@@ -2,7 +2,7 @@
 
 Petit exercice sur l'utilisation des modules `requests` et `unittest` de Python.
 
-# Installation des
+# Installation des dépendances
 
 ```shell
 pip install -r requirements.txt
