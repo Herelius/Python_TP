@@ -1,5 +1,6 @@
 import logging
 import argparse
+import re
 
 from src import format_url, http_get, read_params
 
@@ -11,8 +12,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="This function reads params and returns them.")
     
     # Add personalized arguments
-    parser.add_argument("--protocol", type=str, required=True, help="Can be (http or https)")
-    parser.add_argument("--hostname", type=str, required=True, help="Hostname")
+    parser.add_argument("--protocol", type=str, required=True, choices=['http', 'https'], help="Can be (http or https)")
+    parser.add_argument("--hostname", type=lambda x: re.match(r'^(?:[^:\n]+://)?([^:#/\n]*)', x).group(0), required=True, help="Hostname")
     parser.add_argument("--uri", type=str, required=True, help="URI")
     parser.add_argument("--threshold", type=int, required=True, help="Threashold")
 
@@ -45,12 +46,9 @@ if __name__ == '__main__':
     # PART format_url:
     # ------------------------------------------------------------------------------------
     logging.info(f"Starting executing function 'format_url' ...")
-    protocol = "https"
-    hostname = "google.com"
-    uri = "fr"
-    result_format_url = format_url(protocol, hostname, uri)
+    result_format_url = format_url(args.protocol, args.hostname, args.uri)
 
-    logging.info(f"Result of 'format_url' function: parameter 'protocol' = '{protocol}', 'hostname' = '{hostname}', uri = '{uri}:")
+    logging.info(f"Result of 'format_url' function: parameter 'protocol' = '{args.protocol}', 'hostname' = '{args.hostname}', uri = '{args.uri}:")
     logging.info(f"{result_format_url}\n")
     # ------------------------------------------------------------------------------------
     

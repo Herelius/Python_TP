@@ -1,9 +1,9 @@
 @echo off
 
 set PYTHON_EXEC=python
-set PROTOCOL=http
-set HOSTNAME=google.com
-set URI=/fr
+set PROTOCOL=https
+set HOSTNAME=github.com
+set URI=/Herelius
 set THRESHOLD=10
 
 echo Exec params:

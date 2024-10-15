@@ -9,19 +9,11 @@ from src import format_url
 
 
 class TestFormatUrl(unittest.TestCase):
-    def test_uri_with_slash(self) -> None:
-        self.assertEqual(format_url("https", "google.com", "/fr"), "https://google.com/fr")
-        
-    def test_uri_without_slash(self) -> None:
-        self.assertEqual(format_url("https", "google.com", "fr"), "https://google.com/fr")
-        
-    def test_error_protocol(self) -> None:
-        with self.assertRaises(ValueError):
-            format_url("ftp", "google.com", "fr")
-        
-    def test_error_hostname(self) -> None:
-        with self.assertRaises(ValueError):
-            format_url("ftp", "google", "fr")
+    def test_uri_exists(self) -> None:
+        self.assertEqual(format_url("https", "google.com", ""), "https://google.com/", msg="url 'https://google.com/' exists!")
+    
+    def test_uri_unknown(self) -> None:
+        self.assertEqual(format_url("https", "toto.com", "fr"), None, msg="url 'https://toto.com/fr' does not exists!")
 
 
 if __name__ == "__main__":
